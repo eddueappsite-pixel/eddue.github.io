@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>edDue — Terms & Privacy</title>
 <meta name="description" content="Terms of Use and Privacy Policy for the edDue application." />
-<link rel="icon" href="favicon.ico" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <style>
-  :root { --bg:#0b1220; --fg:#e6eef7; --muted:#9db0c7; --brand:#0ea5e9; --card:rgba(255,255,255,.03); --border:rgba(255,255,255,.09); }
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:#0b1220;color:var(--fg)}
+  :root{--bg:#0b1220;--fg:#e6eef7;--muted:#9db0c7;--brand:#007aff;--card:rgba(255,255,255,.03);--border:rgba(255,255,255,.09)}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:var(--bg);color:var(--fg)}
   a{color:#9cd2ff;text-decoration:none}
-  .topbar{background:linear-gradient(0deg, rgba(255,255,255,.06), rgba(255,255,255,.06)) , var(--brand);color:#03121c;border-bottom:1px solid rgba(0,0,0,.15);position:sticky;top:0;z-index:50}
+
+  .topbar{background:linear-gradient(0deg, rgba(255,255,255,.06), rgba(255,255,255,.06)), var(--brand);color:#03121c;border-bottom:1px solid rgba(0,0,0,.15);position:sticky;top:0;z-index:50}
   .topbar-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800}
   .brand img{width:28px;height:28px;border-radius:6px;display:block}
@@ -18,20 +20,20 @@
   .menu a{padding:8px 10px;border-radius:8px;font-weight:600;opacity:.95}
   .menu a:hover{background:rgba(255,255,255,.15)}
   .lang{position:relative}
-  .lang-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:0;background:transparent;font-weight:700;cursor:pointer}
-  .lang-btn:hover{background:rgba(255,255,255,.15)}
+  .lang-btn{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:9999px;border:1px solid rgba(0,0,0,.15);background:#ffffff;color:#03121c;font-weight:700;cursor:pointer}
+  .globe{width:18px;height:18px;color:var(--brand)}
   .lang-menu{position:absolute;right:0;top:calc(100% + 8px);background:#0b1220;color:var(--fg);border:1px solid var(--border);border-radius:10px;min-width:160px;padding:6px;display:none}
   .lang-menu a{display:block;padding:8px 10px;border-radius:8px}
   .lang-menu a:hover{background:rgba(255,255,255,.06)}
   .lang[data-open="true"] .lang-menu{display:block}
+
   .wrap{max-width:880px;margin:0 auto;padding:22px 16px}
   h1{margin:16px 0 8px}
-  h2{margin:24px 0 8px;font-size:18px}
+  .card{margin:18px 0;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--card)}
+  h2{margin:0 0 10px;font-size:18px;color:var(--brand)} /* section titles in blue */
   p,li{color:#dbe7f3;line-height:1.6}
   .muted{color:var(--muted);font-size:14px}
-  .card{margin:18px 0;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--card)}
   footer{margin:32px 0;color:var(--muted);font-size:14px}
-  .globe{width:18px;height:18px}
 </style>
 </head>
 <body>
@@ -39,7 +41,7 @@
   <div class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/">
-        <img src="eddueicon.png" alt="edDue app icon" />
+        <img src="/eddueicon.png" alt="edDue app icon" />
         <span>edDue</span>
       </a>
       <nav class="menu">
@@ -72,27 +74,28 @@
       <div class="card">
         <h2>Privacy Policy and Agreement of Use for the edDue Application</h2>
 
-        <h3 style="margin:10px 0 6px">Our Commitment to Privacy</h3>
-        <p>edDue respects your privacy. We do not collect, use, or store any personal information that can identify you as an individual.</p>
+        <p><strong>Our Commitment to Privacy</strong><br>
+        edDue respects your privacy. We do not collect, use, or store any personal information that can identify you as an individual.</p>
 
-        <h3 style="margin:10px 0 6px">Data Collected</h3>
-        <p>We may collect anonymized data about app usage to improve our service. This data does not include any information that can be traced back to you.</p>
+        <p><strong>Data Collected</strong><br>
+        We may collect anonymized data about app usage to improve our service. This data does not include any information that can be traced back to you.</p>
 
-        <h3 style="margin:10px 0 6px">Third-Party Services</h3>
-        <p>edDue may utilize third-party services for analytics or other functionalities. These services may collect limited data in accordance with their privacy policies. We will strive to partner with services that respect user privacy.</p>
+        <p><strong>Third-Party Services</strong><br>
+        edDue may utilize third-party services for analytics or other functionalities. These services may collect limited data in accordance with their privacy policies. We will strive to partner with services that respect user privacy.</p>
 
-        <h3 style="margin:10px 0 6px">Subscriptions</h3>
-        <p>edDue offers subscriptions starting at $2.99 (price may vary by region). Subscriptions will be charged to your iTunes account upon confirmation of purchase.</p>
+        <p><strong>Subscriptions</strong><br>
+        edDue offers subscriptions starting at $2.99 (price may vary by region). Subscriptions will be charged to your iTunes account upon confirmation of purchase.</p>
+
         <p>Subscriptions automatically renew unless auto-renewal is deactivated at least 24 hours before the current subscription ends. Renewal charges are processed within 24 hours before the end of the current term, with the renewal price clearly communicated. You can manage and cancel your subscription through your iTunes account settings.</p>
 
-        <h3 style="margin:10px 0 6px">Terms of Use</h3>
-        <p>The edDue application is provided “as is” without any warranties, expressed or implied, including merchantability, fitness for a particular purpose, or non-infringement. The developers or copyright holders shall not be liable for any claims, damages, or other liabilities arising from the use of the application.</p>
+        <p><strong>Terms of Use</strong><br>
+        The edDue application is provided “as is” without any warranties, expressed or implied, including merchantability, fitness for a particular purpose, or non-infringement. The developers or copyright holders shall not be liable for any claims, damages, or other liabilities arising from the use of the application.</p>
 
-        <h3 style="margin:10px 0 6px">Your Acceptance</h3>
-        <p>By using the edDue app, you agree to the terms outlined in this document.</p>
+        <p><strong>Your Acceptance</strong><br>
+        By using the edDue app, you agree to the terms outlined in this document.</p>
 
-        <h3 style="margin:10px 0 6px">Contact Us</h3>
-        <p>For any questions or concerns, please contact us at: <a href="mailto:eddue.app@gmail.com">eddue.app@gmail.com</a></p>
+        <p><strong>Contact Us</strong><br>
+        For any questions or concerns, please contact us at: <a href="mailto:eddue.app@gmail.com">eddue.app@gmail.com</a></p>
       </div>
     </main>
 
@@ -104,8 +107,8 @@
 <script>
   document.getElementById('y').textContent=new Date().getFullYear();
   const lang = document.getElementById('lang'); const btn = lang.querySelector('.lang-btn');
-  btn.addEventListener('click', ()=>{ const open = lang.getAttribute('data-open')==='true'; lang.setAttribute('data-open', String(!open)); btn.setAttribute('aria-expanded', String(!open)); });
-  document.addEventListener('click', (e)=>{ if(!lang.contains(e.target)){ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); }});
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); const open = lang.getAttribute('data-open')==='true'; lang.setAttribute('data-open', String(!open)); btn.setAttribute('aria-expanded', String(!open)); });
+  document.addEventListener('click', ()=>{ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); });
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); }});
 </script>
 </body>
