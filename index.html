@@ -11,27 +11,26 @@
 <link rel="preconnect" href="https://apps.apple.com" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="edDue — calendar for tutors" />
-<meta property="og:description" content="Schedule lessons, manage subscriptions and payments, track attendance, and export reports — all in edDue." />
+<meta property="og:description" content="Schedule lessons, manage lesson packs and payments, track attendance, and export reports — all in edDue." />
 <meta property="og:image" content="https://www.eddue.app/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 
 <style>
-  :root {
+  :root{
     --bg:#0b1220; --fg:#e6eef7; --muted:#9db0c7;
-    --brand:#347BF6; /* your blue */
+    --brand:#007aff; /* your blue */
     --card:rgba(255,255,255,.03); --border:rgba(255,255,255,.09);
+    --shot-scale:0.7; /* 30% smaller screenshots */
   }
   *{box-sizing:border-box}
   body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:var(--bg);color:var(--fg)}
   a{color:inherit;text-decoration:none}
 
-  /* Top bar (your blue) */
+  /* Top bar */
   .topbar{
     background:linear-gradient(0deg, rgba(255,255,255,.06), rgba(255,255,255,.06)), var(--brand);
-    color:#03121c;
-    position:sticky; top:0; z-index:50;
-    border-bottom:1px solid rgba(0,0,0,.15);
-    box-shadow:0 2px 0 rgba(0,0,0,.08);
+    color:#03121c; position:sticky; top:0; z-index:50;
+    border-bottom:1px solid rgba(0,0,0,.15); box-shadow:0 2px 0 rgba(0,0,0,.08);
   }
   .topbar-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800}
@@ -40,10 +39,14 @@
   .menu a{padding:8px 10px;border-radius:8px;font-weight:600;opacity:.95}
   .menu a:hover{background:rgba(255,255,255,.15)}
 
-  /* language switcher */
+  /* Language switcher */
   .lang{position:relative}
-  .lang-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:0;background:transparent;font-weight:700;cursor:pointer}
-  .lang-btn:hover{background:rgba(255,255,255,.15)}
+  .lang-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 10px;border-radius:9999px;border:1px solid rgba(0,0,0,.15);
+    background:#ffffff; color:#03121c; font-weight:700; cursor:pointer;
+  }
+  .globe{width:18px;height:18px;color:var(--brand)}
   .lang-menu{
     position:absolute;right:0;top:calc(100% + 8px);
     background:#0b1220;color:var(--fg);border:1px solid var(--border);border-radius:10px;
@@ -52,25 +55,31 @@
   .lang-menu a{display:block;padding:8px 10px;border-radius:8px}
   .lang-menu a:hover{background:rgba(255,255,255,.06)}
   .lang[data-open="true"] .lang-menu{display:block}
-  .globe{width:18px;height:18px}
 
   .wrap{max-width:1040px;margin:0 auto;padding:22px 16px}
   h1{margin:18px 0 8px;font-size:clamp(28px,4vw,44px)}
+  .sect{margin:28px 0;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--card)}
+  .sect h2{margin:0 0 12px;font-size:22px;color:var(--brand)} /* section titles in blue */
   p{margin:10px 0;color:#dbe7f3}
+
   .btn{display:inline-flex;align-items:center;gap:10px;padding:0;border:0;background:transparent}
   .store-badge{display:inline-flex;align-items:center;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#101a30}
   .store-badge img{display:block;height:48px}
 
-  .sect{margin:28px 0;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--card)}
-  .grid{display:grid;gap:16px}
-  .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-  @media (max-width:940px){ .grid.cols-3{grid-template-columns:1fr} }
+  /* Features: 2 columns desktop, 1 mobile */
+  .features{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media (max-width:900px){ .features{grid-template-columns:1fr} }
+  .feature h3{margin:0 0 6px;font-size:20px}
+  .fx{display:flex;align-items:flex-start;gap:10px}
+  .emoji{font-size:22px;line-height:1.1}
 
   /* Inside edDue grid */
-  .shots{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
-  @media (max-width:940px){ .shots{grid-template-columns:1fr 1fr} }
-  @media (max-width:640px){ .shots{grid-template-columns:1fr} }
-  .shots img{width:100%;height:auto;border-radius:12px;border:1px solid var(--border);background:#0a0f1e;display:block}
+  .shots{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+  @media (max-width:900px){ .shots{grid-template-columns:1fr} }
+  .shots img{
+    width:calc(100% * var(--shot-scale)); margin:0 auto;
+    height:auto;border-radius:12px;border:1px solid var(--border);background:#0a0f1e;display:block
+  }
 
   footer{margin:32px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   footer a{color:inherit;text-decoration:underline}
@@ -123,63 +132,34 @@
         </div>
       </section>
 
+      <!-- Features with emojis, 2 columns -->
       <section class="sect" id="features">
-        <h2 style="margin:0 0 12px;font-size:22px">What you can do with edDue</h2>
-        <div class="grid cols-3">
-          <div class="card"><h3 style="margin:0 0 6px;font-size:18px">Schedule lessons</h3><p>Use the intuitive calendar to add lessons and personal events and organize your day.</p></div>
-          <div class="card"><h3 style="margin:0 0 6px;font-size:18px">Manage groups</h3><p>Create student groups and mark attendance for each session.</p></div>
-          <div class="card"><h3 style="margin:0 0 6px;font-size:18px">Track subscriptions</h3><p>Monitor subscription periods, session counts, and payments with ease.</p></div>
-          <div class="card"><h3 style="margin:0 0 6px;font-size:18px">Per-client currency</h3><p>Assign a currency to each client — handy when students pay in different currencies.</p></div>
-          <div class="card"><h3 style="margin:0 0 6px;font-size:18px">Client balance</h3><p>Track payments and outstanding balances to keep finances clear.</p></div>
-          <div class="card"><h3 style="margin:0 0 6px;font-size:18px">Stats & reports</h3><p>Create reports on income, expenses, and attendance with time and client filters. Export and share with clients.</p></div>
-          <div class="card"><h3 style="margin:0 0 6px;font-size:18px">Data transfer</h3><p>When changing phones, move your entire database to your new device.</p></div>
-          <div class="card" style="grid-column:1/-1"><h3 style="margin:0 0 6px;font-size:18px">Your reliable assistant</h3><p>Simplify scheduling, save time, and focus on what matters — teaching and your clients’ progress.</p></div>
-        </div>
-      </section>
+        <h2>What you can do with edDue</h2>
+        <div class="features">
+          <div class="feature">
+            <div class="fx"><div class="emoji">📅</div><div>
+              <h3>Schedule lessons</h3>
+              <p>Use the intuitive calendar to add lessons and personal events and organize your day.</p>
+            </div></div>
+          </div>
 
-      <!-- Renamed section -->
-      <section class="sect" id="inside">
-        <h2 style="margin:0 0 12px;font-size:22px">Inside edDue</h2>
-        <div class="shots">
-          <img src="/screenshots/1.png" alt="edDue screen 1" loading="lazy" />
-          <img src="/screenshots/2.png" alt="edDue screen 2" loading="lazy" />
-          <img src="/screenshots/3.png" alt="edDue screen 3" loading="lazy" />
-          <img src="/screenshots/4.png" alt="edDue screen 4" loading="lazy" />
-          <img src="/screenshots/5.png" alt="edDue screen 5" loading="lazy" />
-          <img src="/screenshots/6.png" alt="edDue screen 6" loading="lazy" />
-        </div>
-      </section>
+          <div class="feature">
+            <div class="fx"><div class="emoji">👥</div><div>
+              <h3>Manage groups</h3>
+              <p>Create student groups and mark attendance for each session.</p>
+            </div></div>
+          </div>
 
-      <section class="sect" id="contact-news">
-        <h2 style="margin:0 0 12px;font-size:22px">Stay in touch</h2>
-        <p>
-          Latest news: <a href="https://t.me/eddueapp" rel="noopener" style="text-decoration:underline">Telegram channel</a>
-          &nbsp;•&nbsp;
-          Contact us: <a href="mailto:eddue.app@gmail.com" style="text-decoration:underline">eddue.app@gmail.com</a>
-        </p>
-      </section>
-    </main>
+          <div class="feature">
+            <div class="fx"><div class="emoji">🎟️</div><div>
+              <h3>Manage lesson packs</h3>
+              <p>Keep track of each student’s pack (valid period, number of sessions, and remaining balance).</p>
+            </div></div>
+          </div>
 
-    <footer>
-      <div>© <span id="y"></span> edDue</div>
-      <div><a href="/terms.html">Terms & Privacy</a></div>
-    </footer>
-  </div>
-
-<script>
-  document.getElementById('y').textContent=new Date().getFullYear();
-
-  // Language dropdown
-  const lang = document.getElementById('lang');
-  const btn = lang.querySelector('.lang-btn');
-  btn.addEventListener('click', (e)=> {
-    e.stopPropagation();
-    const open = lang.getAttribute('data-open') === 'true';
-    lang.setAttribute('data-open', String(!open));
-    btn.setAttribute('aria-expanded', String(!open));
-  });
-  document.addEventListener('click', ()=>{ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); });
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); }});
-</script>
-</body>
-</html>
+          <div class="feature">
+            <div class="fx"><div class="emoji">💱</div><div>
+              <h3>Per-client currency</h3>
+              <p>Assign a currency to each client — handy when students pay in different currencies.</p>
+            </div></div>
+          </div>
