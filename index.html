@@ -163,3 +163,80 @@
               <p>Assign a currency to each client — handy when students pay in different currencies.</p>
             </div></div>
           </div>
+
+          <div class="feature">
+            <div class="fx"><div class="emoji">💼</div><div>
+              <h3>Client balance</h3>
+              <p>Track payments and outstanding balances to keep finances clear.</p>
+            </div></div>
+          </div>
+
+          <div class="feature">
+            <div class="fx"><div class="emoji">📊</div><div>
+              <h3>Stats & reports</h3>
+              <p>Create reports on income, expenses, and attendance with time and client filters. Export and share.</p>
+            </div></div>
+          </div>
+
+          <div class="feature">
+            <div class="fx"><div class="emoji">🔄</div><div>
+              <h3>Data transfer</h3>
+              <p>When changing phones, move your entire database to your new device.</p>
+            </div></div>
+          </div>
+
+          <div class="feature">
+            <div class="fx"><div class="emoji">🤝</div><div>
+              <h3>Your reliable assistant</h3>
+              <p>Simplify scheduling, save time, and focus on what matters — teaching and your clients’ progress.</p>
+            </div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Inside edDue -->
+      <section class="sect" id="inside">
+        <h2>Inside edDue</h2>
+        <div class="shots">
+          <img src="/screenshots/1.png" alt="edDue screen 1" loading="lazy" />
+          <img src="/screenshots/2.png" alt="edDue screen 2" loading="lazy" />
+          <img src="/screenshots/3.png" alt="edDue screen 3" loading="lazy" />
+          <img src="/screenshots/4.png" alt="edDue screen 4" loading="lazy" />
+          <img src="/screenshots/5.png" alt="edDue screen 5" loading="lazy" />
+          <img src="/screenshots/6.png" alt="edDue screen 6" loading="lazy" />
+        </div>
+      </section>
+
+      <section class="sect" id="contact-news">
+        <h2>Stay in touch</h2>
+        <p>
+          Latest news: <a href="https://t.me/eddueapp" rel="noopener" style="text-decoration:underline">Telegram channel</a>
+          &nbsp;•&nbsp;
+          Contact us: <a href="mailto:eddue.app@gmail.com" style="text-decoration:underline">eddue.app@gmail.com</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> edDue</div>
+      <div><a href="/terms.html">Terms & Privacy</a></div>
+    </footer>
+  </div>
+
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+
+  // Language dropdown
+  const lang = document.getElementById('lang');
+  const btn = lang.querySelector('.lang-btn');
+  btn.addEventListener('click', (e)=> {
+    e.stopPropagation();
+    const open = lang.getAttribute('data-open') === 'true';
+    lang.setAttribute('data-open', String(!open));
+    btn.setAttribute('aria-expanded', String(!open));
+  });
+  document.addEventListener('click', ()=>{ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); }});
+</script>
+</body>
+</html>
