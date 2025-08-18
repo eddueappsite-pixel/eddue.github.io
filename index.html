@@ -20,7 +20,6 @@
     --bg:#0b1220; --fg:#e6eef7; --muted:#9db0c7;
     --brand:#007aff;
     --card:rgba(255,255,255,.03); --border:rgba(255,255,255,.09);
-    --shot-scale:0.7; /* 30% smaller */
   }
   *{box-sizing:border-box}
   body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:var(--bg);color:var(--fg)}
@@ -58,28 +57,42 @@
 
   .wrap{max-width:1040px;margin:0 auto;padding:22px 16px}
   h1{margin:18px 0 8px;font-size:clamp(28px,4vw,44px)}
+
   .sect{margin:28px 0;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--card)}
-  .sect h2{margin:0 0 12px;font-size:22px;color:var(--fg)} /* titles back to white */
+  /* SECTION TITLES — larger & white for clearer hierarchy */
+  .sect h2{margin:0 0 14px;font-size:clamp(26px,3.2vw,34px);color:var(--fg);letter-spacing:.2px}
+
   p{margin:10px 0;color:#dbe7f3}
 
   .btn{display:inline-flex;align-items:center;gap:10px;padding:0;border:0;background:transparent}
   .store-badge{display:inline-flex;align-items:center;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#101a30}
   .store-badge img{display:block;height:48px}
 
-  /* Features (unchanged): 2 columns desktop */
+  /* HERO with logo left, text right */
+  .hero{display:flex;align-items:center;gap:16px}
+  .hero-logo img{
+    width:96px;height:96px;border-radius:20px;
+    border:1px solid var(--border);background:#0a0f1e;display:block
+  }
+  .hero-text{flex:1}
+  @media (max-width:720px){
+    .hero{flex-direction:column;align-items:flex-start}
+  }
+
+  /* Features: 2 columns desktop, 1 mobile */
   .features{display:grid;grid-template-columns:1fr 1fr;gap:22px}
   @media (max-width:900px){ .features{grid-template-columns:1fr} }
-  .feature h3{margin:0 0 6px;font-size:20px}
+  .feature h3{margin:0 0 6px;font-size:19px}
   .fx{display:flex;align-items:flex-start;gap:10px}
   .emoji{font-size:22px;line-height:1.1}
 
-  /* Inside edDue — 3 per row on desktop; each image 70% width, centered */
+  /* Inside edDue — original layout: 3/2/1 columns, full width images */
   .shots{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
   @media (max-width:900px){ .shots{grid-template-columns:repeat(2,1fr)} }
   @media (max-width:600px){ .shots{grid-template-columns:1fr} }
   .shots img{
-    width:calc(100% * var(--shot-scale)); margin:0 auto; /* smaller + centered */
-    height:auto;border-radius:12px;border:1px solid var(--border);background:#0a0f1e;display:block
+    width:100%;height:auto;border-radius:12px;border:1px solid var(--border);
+    background:#0a0f1e;display:block
   }
 
   footer{margin:32px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -120,16 +133,22 @@
   <div class="wrap">
     <main>
       <section class="sect" id="about">
-        <h1>Calendar for tutors, without the clutter</h1>
-        <p>
-          edDue is an app for tutors and coaches that makes planning lessons and tracking income simpler and more efficient.
-          Manage clients, sessions, and payments in one place — fast and clearly.
-        </p>
-
-        <div style="margin-top:14px">
-          <a class="btn store-badge" href="https://apps.apple.com/in/app/eddue-calendar-for-tutors/id6469512576" rel="noopener">
-            <img src="/appstoreicon.svg" alt="Download on the App Store" />
-          </a>
+        <div class="hero">
+          <div class="hero-logo">
+            <img src="/eddueicon.png" alt="edDue logo" />
+          </div>
+          <div class="hero-text">
+            <h1>Calendar for tutors, without the clutter</h1>
+            <p>
+              edDue is an app for tutors and coaches that makes planning lessons and tracking income simpler and more efficient.
+              Manage clients, sessions, and payments in one place — fast and clearly.
+            </p>
+            <div style="margin-top:12px">
+              <a class="btn store-badge" href="https://apps.apple.com/in/app/eddue-calendar-for-tutors/id6469512576" rel="noopener">
+                <img src="/appstoreicon.svg" alt="Download on the App Store" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -147,7 +166,6 @@
         </div>
       </section>
 
-      <!-- Inside edDue — 3 per row, 30% smaller -->
       <section class="sect" id="inside">
         <h2>Inside edDue</h2>
         <div class="shots">
