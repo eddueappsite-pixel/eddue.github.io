@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>edDue — Terms of Use</title>
+<meta name="description" content="Terms of Use for edDue." />
+<link rel="icon" href="favicon.ico" />
+<style>
+  :root { --bg:#0b1220; --fg:#e6eef7; --muted:#9db0c7; }
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:#0b1220;color:var(--fg)}
+  .wrap{max-width:800px;margin:0 auto;padding:24px}
+  a{color:#9cd2ff}
+  h1{margin:8px 0 16px}
+  h2{margin:20px 0 6px;font-size:18px}
+  p,li{color:#dbe7f3;line-height:1.6}
+  .muted{color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+    <div style="font-weight:700;display:flex;align-items:center;gap:10px">
+      <span style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#22d3ee,#0ea5e9);display:inline-block"></span>
+      edDue
+    </div>
+    <nav><a href="/">Home</a></nav>
+  </header>
+
+  <main>
+    <h1>Terms of Use</h1>
+    <p class="muted">Last updated: <span id="d"></span></p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using edDue (the “App”) and this website, you agree to these Terms of Use (“Terms”). If you do not agree, do not use the App or site.</p>
+
+    <h2>2. The Service</h2>
+    <p>edDue provides scheduling tools intended for tutors. We may update or change features from time to time.</p>
+
+    <h2>3. Eligibility & Accounts</h2>
+    <p>You are responsible for maintaining the security of your device and any account credentials associated with the App.</p>
+
+    <h2>4. Payments & Subscriptions</h2>
+    <p>If the App offers paid features or subscriptions, additional terms will apply. Fees are non-refundable except where required by law.</p>
+
+    <h2>5. Acceptable Use</h2>
+    <ul>
+      <li>Do not use the App for unlawful activities.</li>
+      <li>Do not attempt to disrupt or reverse-engineer the service.</li>
+      <li>Do not infringe on others’ rights or privacy.</li>
+    </ul>
+
+    <h2>6. Intellectual Property</h2>
+    <p>edDue, its name, logos, and content are owned by us or our licensors and are protected by applicable laws.</p>
+
+    <h2>7. Disclaimers</h2>
+    <p>The App is provided “as is” without warranties of any kind. Your use is at your sole risk.</p>
+
+    <h2>8. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, we will not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App or site.</p>
+
+    <h2>9. Changes to These Terms</h2>
+    <p>We may revise these Terms by posting an updated version on this page. Continued use means you accept the changes.</p>
+
+    <h2>10. Contact</h2>
+    <p>Questions? Contact us on Telegram: <a href="https://t.me/eddueapp" rel="noopener">@eddueapp</a>.</p>
+  </main>
+
+  <footer style="margin:28px 0;color:var(--muted);font-size:14px">
+    © <span id="y"></span> edDue
+  </footer>
+</div>
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+  document.getElementById('d').textContent=new Date().toISOString().slice(0,10);
+</script>
+</body>
+</html>
