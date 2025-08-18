@@ -1,5 +1,72 @@
 <!doctype html>
-<html>
-  <head><title>edDue test</title></head>
-  <body><h1>Hello from edDue!</h1></body>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>edDue — calendar for tutors</title>
+<meta name="description" content="edDue is a simple calendar for tutors to schedule lessons and stay organized." />
+<link rel="icon" href="favicon.ico" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="edDue — calendar for tutors" />
+<meta property="og:description" content="Schedule lessons, track students, and save time with edDue." />
+<meta property="og:image" content="https://www.eddue.app/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<style>
+  :root { --bg:#0b1220; --fg:#e6eef7; --muted:#9db0c7; --brand:#0ea5e9; }
+  *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:#0b1220;color:var(--fg)}
+  a{color:inherit}
+  .wrap{max-width:880px;margin:0 auto;padding:24px}
+  header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  nav a{opacity:.9;text-decoration:none;margin-left:16px} nav a:hover{opacity:1}
+  h1{margin:16px 0 8px;font-size:clamp(28px,4vw,44px)}
+  p{margin:12px 0;color:#dbe7f3}
+  .btn{display:inline-block;padding:12px 16px;border-radius:10px;border:1px solid #2b3a55;background:#101a30;text-decoration:none;font-weight:600;margin-right:10px}
+  .btn.primary{background:var(--brand);border-color:transparent;color:#04121b}
+  .sect{margin:28px 0;padding:18px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.03)}
+  footer{margin:32px 0;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div style="font-weight:700;display:flex;align-items:center;gap:10px">
+      <span style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#22d3ee,#0ea5e9);display:inline-block"></span>
+      edDue
+    </div>
+    <nav>
+      <a href="#download">Download</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="sect" id="about">
+      <h1>Calendar for tutors, without the clutter</h1>
+      <p>edDue helps tutors schedule lessons fast, keep students organized, and save time on admin.</p>
+      <div id="download" style="margin-top:12px">
+        <a class="btn primary" href="https://apps.apple.com/in/app/eddue-calendar-for-tutors/id6469512576" rel="noopener">Download on the App Store</a>
+      </div>
+    </section>
+
+    <section class="sect" id="news">
+      <h2 style="margin:0 0 8px;font-size:20px">Latest news</h2>
+      <p>Follow updates and announcements on our Telegram channel.</p>
+      <p><a class="btn" href="https://t.me/eddueapp" rel="noopener">Open Telegram</a></p>
+    </section>
+
+    <section class="sect" id="contact">
+      <h2 style="margin:0 0 8px;font-size:20px">Contact us</h2>
+      <p>Have questions or feedback? Reach out on Telegram.</p>
+      <p><a class="btn" href="https://t.me/eddueapp" rel="noopener">Message us</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> edDue • <a href="/terms.html" style="color:inherit">Terms</a>
+  </footer>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
 </html>
