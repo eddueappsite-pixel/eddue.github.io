@@ -5,32 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>edDue — calendar for tutors</title>
 <meta name="description" content="edDue helps tutors and coaches schedule lessons, manage clients and payments, and keep everything organized in one app." />
-<link rel="icon" href="favicon.ico" />
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="preconnect" href="https://apps.apple.com" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="edDue — calendar for tutors" />
 <meta property="og:description" content="Schedule lessons, manage subscriptions and payments, track attendance, and export reports — all in edDue." />
 <meta property="og:image" content="https://www.eddue.app/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
+
 <style>
-  :root { --bg:#0b1220; --fg:#e6eef7; --muted:#9db0c7; --brand:#0ea5e9; --card:rgba(255,255,255,.03); --border:rgba(255,255,255,.09); }
+  :root {
+    --bg:#0b1220; --fg:#e6eef7; --muted:#9db0c7;
+    --brand:#347BF6; /* your blue */
+    --card:rgba(255,255,255,.03); --border:rgba(255,255,255,.09);
+  }
   *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:#0b1220;color:var(--fg)}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:var(--bg);color:var(--fg)}
   a{color:inherit;text-decoration:none}
 
-  /* Top bar (blue) */
+  /* Top bar (your blue) */
   .topbar{
-    background:linear-gradient(0deg, rgba(255,255,255,.06), rgba(255,255,255,.06)) , var(--brand);
+    background:linear-gradient(0deg, rgba(255,255,255,.06), rgba(255,255,255,.06)), var(--brand);
     color:#03121c;
     position:sticky; top:0; z-index:50;
     border-bottom:1px solid rgba(0,0,0,.15);
+    box-shadow:0 2px 0 rgba(0,0,0,.08);
   }
   .topbar-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800}
   .brand img{width:28px;height:28px;border-radius:6px;display:block}
   .menu{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-  .menu a{
-    padding:8px 10px;border-radius:8px;font-weight:600;opacity:.95
-  }
+  .menu a{padding:8px 10px;border-radius:8px;font-weight:600;opacity:.95}
   .menu a:hover{background:rgba(255,255,255,.15)}
 
   /* language switcher */
@@ -40,11 +47,12 @@
   .lang-menu{
     position:absolute;right:0;top:calc(100% + 8px);
     background:#0b1220;color:var(--fg);border:1px solid var(--border);border-radius:10px;
-    min-width:160px;padding:6px;display:none;
+    min-width:160px;padding:6px;display:none
   }
   .lang-menu a{display:block;padding:8px 10px;border-radius:8px}
   .lang-menu a:hover{background:rgba(255,255,255,.06)}
   .lang[data-open="true"] .lang-menu{display:block}
+  .globe{width:18px;height:18px}
 
   .wrap{max-width:1040px;margin:0 auto;padding:22px 16px}
   h1{margin:18px 0 8px;font-size:clamp(28px,4vw,44px)}
@@ -58,27 +66,23 @@
   .grid.cols-3{grid-template-columns:repeat(3,1fr)}
   @media (max-width:940px){ .grid.cols-3{grid-template-columns:1fr} }
 
-  /* Screenshot-like grid (Inside edDue) */
+  /* Inside edDue grid */
   .shots{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
   @media (max-width:940px){ .shots{grid-template-columns:1fr 1fr} }
   @media (max-width:640px){ .shots{grid-template-columns:1fr} }
-  .shots img{
-    width:100%;height:auto;border-radius:12px;border:1px solid var(--border);
-    background:#0a0f1e;display:block
-  }
+  .shots img{width:100%;height:auto;border-radius:12px;border:1px solid var(--border);background:#0a0f1e;display:block}
 
   footer{margin:32px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   footer a{color:inherit;text-decoration:underline}
-  .globe{width:18px;height:18px}
 </style>
 </head>
 <body>
 
-  <!-- Blue top menu -->
+  <!-- Top menu -->
   <div class="topbar" role="navigation" aria-label="Main">
     <div class="topbar-inner">
       <a class="brand" href="/">
-        <img src="eddueicon.png" alt="edDue app icon" />
+        <img src="/eddueicon.png" alt="edDue app icon" />
         <span>edDue</span>
       </a>
       <nav class="menu">
@@ -88,7 +92,6 @@
         <a href="/terms.html">Terms</a>
         <div class="lang" id="lang">
           <button class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Language">
-            <!-- Planet icon -->
             <svg class="globe" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
               <path d="M2 12h20M12 2c3.5 3.5 3.5 16.5 0 20M12 2c-3.5 3.5-3.5 16.5 0 20" stroke="currentColor" stroke-width="2"/>
@@ -113,15 +116,13 @@
           Manage clients, sessions, and payments in one place — fast and clearly.
         </p>
 
-        <!-- App Store button image -->
         <div style="margin-top:14px">
           <a class="btn store-badge" href="https://apps.apple.com/in/app/eddue-calendar-for-tutors/id6469512576" rel="noopener">
-            <img src="appstoreicon.svg" alt="Download on the App Store" />
+            <img src="/appstoreicon.svg" alt="Download on the App Store" />
           </a>
         </div>
       </section>
 
-      <!-- Features (EN) -->
       <section class="sect" id="features">
         <h2 style="margin:0 0 12px;font-size:22px">What you can do with edDue</h2>
         <div class="grid cols-3">
@@ -136,7 +137,7 @@
         </div>
       </section>
 
-      <!-- Inside edDue (formerly Screenshots) -->
+      <!-- Renamed section -->
       <section class="sect" id="inside">
         <h2 style="margin:0 0 12px;font-size:22px">Inside edDue</h2>
         <div class="shots">
@@ -149,7 +150,6 @@
         </div>
       </section>
 
-      <!-- Contact + News -->
       <section class="sect" id="contact-news">
         <h2 style="margin:0 0 12px;font-size:22px">Stay in touch</h2>
         <p>
@@ -168,17 +168,17 @@
 
 <script>
   document.getElementById('y').textContent=new Date().getFullYear();
+
   // Language dropdown
   const lang = document.getElementById('lang');
   const btn = lang.querySelector('.lang-btn');
   btn.addEventListener('click', (e)=> {
+    e.stopPropagation();
     const open = lang.getAttribute('data-open') === 'true';
     lang.setAttribute('data-open', String(!open));
     btn.setAttribute('aria-expanded', String(!open));
   });
-  document.addEventListener('click', (e)=>{
-    if(!lang.contains(e.target)){ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); }
-  });
+  document.addEventListener('click', ()=>{ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); });
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); }});
 </script>
 </body>
