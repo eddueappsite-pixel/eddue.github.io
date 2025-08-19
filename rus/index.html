@@ -16,7 +16,7 @@
 <meta property="og:description" content="Назначайте занятия, ведите абонементы и оплаты, отмечайте посещаемость и формируйте отчёты в edDue." />
 
 <style>
-  :root{--bg:#0b1220;--fg:#e6eef7;--muted:#9db0c7;--brand:#007aff;--card:rgba(255,255,255,.03);--border:rgba(255,255,255,.09)}
+  :root{--bg:#0b1220;--fg:#e6eef7;--muted:#9db0c7;--brand:#386090;--card:rgba(255,255,255,.03);--border:rgba(255,255,255,.09)}
   *{box-sizing:border-box}
   body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:var(--bg);color:var(--fg)}
   a{color:inherit;text-decoration:none}
@@ -60,10 +60,8 @@
   .fx{display:flex;align-items:flex-start;gap:10px}
   .emoji{font-size:22px;line-height:1.1}
 
-  .shots{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
-  @media (max-width:900px){ .shots{grid-template-columns:repeat(2,1fr)} }
-  @media (max-width:600px){ .shots{grid-template-columns:1fr} }
-  .shots img{width:100%;height:auto;border-radius:12px;border:1px solid var(--border);background:#0a0f1e;display:block}
+  /* Single fullscreen image */
+  .fullshot img{width:100%;height:auto;border-radius:12px;border:1px solid var(--border);background:#0a0f1e;display:block}
 
   footer{margin:32px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   footer a{color:inherit;text-decoration:underline}
@@ -135,15 +133,11 @@
         </div>
       </section>
 
+      <!-- Внутри edDue — одиночное изображение -->
       <section class="sect" id="inside">
         <h2>Внутри edDue</h2>
-        <div class="shots">
-          <img src="/screenshotsrus/1rus.png" alt="Скриншот edDue 1" loading="lazy" />
-          <img src="/screenshotsrus/2rus.png" alt="Скриншот edDue 2" loading="lazy" />
-          <img src="/screenshotsrus/3rus.png" alt="Скриншот edDue 3" loading="lazy" />
-          <img src="/screenshotsrus/4rus.png" alt="Скриншот edDue 4" loading="lazy" />
-          <img src="/screenshotsrus/5rus.png" alt="Скриншот edDue 5" loading="lazy" />
-          <img src="/screenshotsrus/6rus.png" alt="Скриншот edDue 6" loading="lazy" />
+        <div class="fullshot">
+          <img src="/fullscreenrus.png" alt="Полный вид edDue" loading="lazy" />
         </div>
       </section>
 
