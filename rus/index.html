@@ -6,17 +6,14 @@
 <title>edDue — календарь для репетиторов</title>
 <meta name="description" content="edDue помогает репетиторам и тренерам планировать занятия, управлять клиентами и платежами — всё в одном приложении." />
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N696MVS16D"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N696MVS16D"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-N696MVS16D');
 </script>
 
-<!-- Tab icons -->
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" href="/eddueicon.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -26,7 +23,7 @@
 <meta property="og:description" content="Назначайте занятия, ведите абонементы и оплаты, отмечайте посещаемость и формируйте отчёты в edDue." />
 
 <style>
-  :root{--bg:#0b1220;--fg:#e6eef7;--muted:#9db0c7;--brand:#386090;--card:rgba(255,255,255,.03);--border:rgba(255,255,255,.09)}
+  :root{--bg:#0b1220;--fg:#e6eef7;--muted:#9db0c7;--brand:#386090;--card:rgba(255,255,255,.03);--border:rgba(255,255,255,.09);--white:#ffffff}
   *{box-sizing:border-box}
   body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:var(--bg);color:var(--fg)}
   a{color:inherit;text-decoration:none}
@@ -38,6 +35,9 @@
   .menu{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
   .menu a{padding:8px 10px;border-radius:8px;font-weight:600;opacity:.98}
   .menu a:hover{background:rgba(255,255,255,.18)}
+  
+  /* Акцент на кнопку подписки в меню */
+  .menu a.sub-link{color:#ffca28}
 
   .lang{position:relative}
   .lang-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:0;background:transparent;color:inherit;font-weight:700;cursor:pointer}
@@ -56,10 +56,16 @@
 
   p{margin:10px 0;color:#dbe7f3}
   .btn{display:inline-flex;align-items:center;gap:10px;padding:0;border:0;background:transparent}
-  .store-badge{display:inline-flex;align-items:center;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#101a30}
-  .store-badge img{display:block;height:48px}
+  
+  /* Кнопки в Hero */
+  .hero-btns{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .store-badge{display:inline-flex;align-items:center;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#101a30;height:48px}
+  .store-badge img{display:block;height:100%}
+  
+  .btn-primary{background:var(--white);color:var(--bg);padding:0 24px;border-radius:12px;font-weight:700;height:48px;display:inline-flex;align-items:center;transition:opacity .2s}
+  .btn-primary:hover{opacity:.9}
 
-  .hero{display:flex;align-items:center;gap:16px}
+  .hero{display:flex;align-items:center;gap:24px}
   .hero-logo img{width:96px;height:96px;border-radius:20px;border:1px solid var(--border);background:#0a0f1e;display:block}
   .hero-text{flex:1}
   @media (max-width:720px){ .hero{flex-direction:column;align-items:flex-start} }
@@ -70,7 +76,6 @@
   .fx{display:flex;align-items:flex-start;gap:10px}
   .emoji{font-size:22px;line-height:1.1}
 
-  /* Single fullscreen image */
   .fullshot img{width:100%;height:auto;border-radius:12px;border:1px solid var(--border);background:#0a0f1e;display:block}
 
   footer{margin:32px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -87,9 +92,9 @@
       </a>
       <nav class="menu">
         <a href="https://apps.apple.com/in/app/eddue-calendar-for-tutors/id6469512576" rel="noopener">Скачать</a>
+        <a href="/rus/subscribe.html" class="sub-link">Подписка</a>
         <a href="https://t.me/eddueapp" rel="noopener">Новости</a>
         <a href="mailto:eddue.app@gmail.com">Контакты</a>
-        <a href="/rus/terms.html">Условия</a>
         <div class="lang" id="lang">
           <button class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Язык">
             <svg class="globe" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -115,16 +120,16 @@
             <img src="/eddueicon.png" alt="Логотип edDue" />
           </div>
           <div class="hero-text">
-            <h1>Календарь для репетиторов — 
-              ничего лишнего</h1>
+            <h1>Календарь для репетиторов — ничего лишнего</h1>
             <p>
               edDue — приложение для репетиторов и тренеров, которое делает планирование занятий и учёт доходов удобнее и эффективнее.
               Управляйте клиентами, занятиями и оплатами в одном месте — быстро и наглядно.
             </p>
-            <div style="margin-top:12px">
+            <div class="hero-btns">
               <a class="btn store-badge" href="https://apps.apple.com/in/app/eddue-calendar-for-tutors/id6469512576" rel="noopener">
                 <img src="/appstoreicon.svg" alt="Загрузить в App Store" />
               </a>
+              <a href="/rus/subscribe.html" class="btn-primary">Купить подписку</a>
             </div>
           </div>
         </div>
@@ -138,13 +143,12 @@
           <div class="feature"><div class="fx"><div class="emoji">🎟️</div><div><h3>Ведите абонементы</h3><p>Контролируйте длительность абонементов, количество занятий и остаток по каждому ученику.</p></div></div></div>
           <div class="feature"><div class="fx"><div class="emoji">💱</div><div><h3>Указывайте валюты</h3><p>Задайте каждому клиенту свою валюту — удобно, если платят по-разному.</p></div></div></div>
           <div class="feature"><div class="fx"><div class="emoji">💼</div><div><h3>Отслеживайте баланс</h3><p>Ведите учёт платежей и долгов клиентов, чтобы финансовая картина была прозрачной.</p></div></div></div>
-          <div class="feature"><div class="fx"><div class="emoji">📊</div><div><h3>Статистика и отчёты</h3><p>Формируйте отчёты по поступлениям, списаниям и посещаемости с фильтрами по времени и клиентам. Экспортируйте и делитесь.</p></div></div></div>
+          <div class="feature"><div class="fx"><div class="emoji">📊</div><div><h3>Статистика и отчёты</h3><p>Формируйте отчёты по поступлениям, списаниям и посещаемости с фильтрами по времени и клиентам.</p></div></div></div>
           <div class="feature"><div class="fx"><div class="emoji">🔄</div><div><h3>Переносите данные</h3><p>При смене телефона перенесите всю базу данных на новое устройство.</p></div></div></div>
-          <div class="feature"><div class="fx"><div class="emoji">🤝</div><div><h3>Надёжный ассистент</h3><p>Упростите организацию встреч, экономьте время и сосредотачивайтесь на главном — обучении и прогрессе учеников.</p></div></div></div>
+          <div class="feature"><div class="fx"><div class="emoji">🤝</div><div><h3>Надёжный ассистент</h3><p>Экономьте время и сосредотачивайтесь на главном — обучении и прогрессе учеников.</p></div></div></div>
         </div>
       </section>
 
-      <!-- Внутри edDue — одиночное изображение -->
       <section class="sect" id="inside">
         <div class="fullshot">
           <img src="/fullscreenrus.png" alt="Полный вид edDue" loading="lazy" />
