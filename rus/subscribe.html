@@ -191,21 +191,51 @@
                 <button class="btn-buy btn-free" disabled>Ваш текущий план</button>
             </div>
 
-            <div class="plan-card popular">
-                <div class="popular-badge">Популярный</div>
-                <div class="plan-name">edDue PRO</div>
-                <div class="price">2199₽ <span>/год</span></div>
-                <ul class="features-list">
-                    <li><strong>Безлимитное</strong> количество учеников</li>
-                    <li>Полная статистика доходов и расходов</li>
-                    <li>Учет абонементов и посещаемости</li>
-                    <li>Поддержка нескольких валют</li>
-                    <li>Экспорт отчетов</li>
-                    <li>Резервное копирование данных</li>
-                    <li>Подписка на 1 год без автопродления</li>
-                </ul>
-                <a href="https://ССЫЛКА_НА_ОПЛАТУ" class="btn-buy btn-pro">Активировать PRO</a>
-            </div>
+           <div class="plan-card popular">
+    <div class="popular-badge">Популярный</div>
+    <div class="plan-name">edDue PRO</div>
+    <div class="price">2199₽ <span>/год</span></div>
+    <ul class="features-list">
+        <li><strong>Безлимитное</strong> количество учеников</li>
+        <li>Полная статистика доходов и расходов</li>
+        <li>Учет абонементов и посещаемости</li>
+        <li>Поддержка нескольких валют</li>
+        <li>Экспорт отчетов и резервное копирование</li>
+        <li>Подписка на 1 год без автопродления</li>
+    </ul>
+
+    <div style="margin-bottom: 16px; text-align: left;">
+        <label style="display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px;">ID пользователя (из настроек приложения):</label>
+        <input type="text" id="app-user-id" placeholder="Например: 55443" 
+               style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.05); color: #fff; font-size: 16px;">
+    </div>
+
+    <a href="#" id="pay-button" class="btn-buy btn-pro">Активировать PRO</a>
+</div>
+
+<script>
+    document.getElementById('pay-button').addEventListener('click', function(e) {
+        const userId = document.getElementById('app-user-id').value.trim();
+        
+        if (!userId) {
+            e.preventDefault();
+            alert('Пожалуйста, введите ваш ID из приложения, чтобы мы знали, кому активировать PRO-версию.');
+            return;
+        }
+
+        // Ваша базовая ссылка из ЮKassa (раздел "Счета и ссылки")
+        // Она выглядит примерно так: https://yookassa.ru/my/i/ABCDEFG12345
+        const baseKassaUrl = "https://yookassa.ru/my/i/adzTzUXthIh2/l";
+
+        // Сохраняем ID локально (на всякий случай для страницы Success)
+        localStorage.setItem('eddue_user_id', userId);
+
+        // Перенаправляем на оплату. 
+        // Большинство ссылок ЮKassa поддерживают передачу комментария в ссылке 
+        // через параметры, если это настроено, либо вы увидите ID в письме-уведомлении об оплате.
+        this.href = baseKassaUrl + "?comment=" + encodeURIComponent("Активация PRO для ID: " + userId);
+    });
+</script>
         </main>
 
        <section style="background: var(--card); padding: 24px; border-radius: 16px; border: 1px solid var(--border); font-size: 14px; color: var(--muted);">
