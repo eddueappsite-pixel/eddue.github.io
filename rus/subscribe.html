@@ -6,13 +6,13 @@
     <title>Подписка edDue — Тарифы для репетиторов</title>
     <meta name="description" content="Выберите подходящий тариф edDue и получите полный доступ к учету занятий, оплат и статистики." />
 
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N696MVS16D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-N696MVS16D');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N696MVS16D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N696MVS16D');
+    </script>
     
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="/eddueicon.png" />
@@ -60,13 +60,12 @@
         .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; }
         .brand img { width: 28px; height: 28px; border-radius: 6px; }
 
-        .wrap { max-width: 900px; margin: 0 auto; padding: 40px 16px; }
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 40px 16px; }
 
         header { text-align: center; margin-bottom: 48px; }
         h1 { font-size: clamp(28px, 5vw, 42px); margin: 0 0 12px; }
         .subtitle { color: var(--muted); font-size: 18px; }
 
-        /* Сетка тарифов */
         .plans {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -103,6 +102,7 @@
             font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
+            white-space: nowrap;
         }
 
         .plan-name { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
@@ -130,7 +130,6 @@
             font-weight: 800;
         }
 
-        /* Кнопки */
         .btn-buy {
             display: block;
             text-align: center;
@@ -144,8 +143,6 @@
 
         .btn-pro { background: var(--accent); color: var(--bg); }
         .btn-pro:hover { opacity: 0.9; transform: translateY(-2px); }
-
-        .btn-free { background: transparent; border: 1px solid var(--border); color: var(--fg); }
 
         footer {
             text-align: center;
@@ -178,83 +175,57 @@
             <p class="subtitle">Инструменты профессионального репетитора без ограничений</p>
         </header>
 
+        <div style="max-width: 500px; margin: 0 auto 32px;">
+            <label style="display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; text-align: center;">ID пользователя (из настроек приложения):</label>
+            <input type="text" id="app-user-id" placeholder="Например: 69bace6a9bfd418f9bcbd090983c2b33" 
+                   style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.05); color: #fff; font-size: 16px; text-align: center;">
+        </div>
+
         <main class="plans">
             <div class="plan-card">
-                <div class="plan-name">Базовый</div>
-                <div class="price">0₽ <span>/всегда</span></div>
+                <div class="plan-name">edDue PRO (Месяц)</div>
+                <div class="price">249₽ <span>/мес</span></div>
                 <ul class="features-list">
-                   
-                    <li>Удобный календарь занятий</li>
-                    <li>Базовые уведомления</li>
-                   
+                    <li><strong>Безлимитное</strong> количество учеников</li>
+                    <li>Полная статистика доходов и расходов</li>
+                    <li>Учет абонементов и посещаемости</li>
+                    <li>Поддержка нескольких валют</li>
+                    <li>Экспорт отчетов и резервное копирование</li>
+                    <li>Подписка на 1 месяц без автопродления</li>
                 </ul>
-                <button class="btn-buy btn-free" disabled>Ваш текущий план</button>
+                <a href="#" class="btn-buy btn-pro pay-btn" data-url="https://yookassa.ru/my/i/ВАША_ССЫЛКА_МЕСЯЦ" data-type="Месяц">Активировать PRO</a>
             </div>
 
-           <div class="plan-card popular">
-    <div class="popular-badge">Популярный</div>
-    <div class="plan-name">edDue PRO</div>
-    <div class="price">2199₽ <span>/год</span></div>
-    <ul class="features-list">
-        <li><strong>Безлимитное</strong> количество учеников</li>
-        <li>Полная статистика доходов и расходов</li>
-        <li>Учет абонементов и посещаемости</li>
-        <li>Поддержка нескольких валют</li>
-        <li>Экспорт отчетов и резервное копирование</li>
-        <li>Подписка на 1 год без автопродления</li>
-    </ul>
-
-    <div style="margin-bottom: 16px; text-align: left;">
-        <label style="display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px;">ID пользователя (из настроек приложения):</label>
-        <input type="text" id="app-user-id" placeholder="Например: 69bace6a9bfd418f9bcbd090983c2b33" 
-               style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.05); color: #fff; font-size: 16px;">
-    </div>
-
-    <a href="#" id="pay-button" class="btn-buy btn-pro">Активировать PRO</a>
-</div>
-
-<script>
-    document.getElementById('pay-button').addEventListener('click', function(e) {
-        const userId = document.getElementById('app-user-id').value.trim();
-        
-        if (!userId) {
-            e.preventDefault();
-            alert('Пожалуйста, введите ваш ID из приложения, чтобы мы знали, кому активировать PRO-версию.');
-            return;
-        }
-
-        // Ваша базовая ссылка из ЮKassa (раздел "Счета и ссылки")
-        // Она выглядит примерно так: https://yookassa.ru/my/i/ABCDEFG12345
-        const baseKassaUrl = "https://yookassa.ru/my/i/adzTzUXthIh2/l";
-
-        // Сохраняем ID локально (на всякий случай для страницы Success)
-        localStorage.setItem('eddue_user_id', userId);
-
-        // Перенаправляем на оплату. 
-        // Большинство ссылок ЮKassa поддерживают передачу комментария в ссылке 
-        // через параметры, если это настроено, либо вы увидите ID в письме-уведомлении об оплате.
-        this.href = baseKassaUrl + "?comment=" + encodeURIComponent("Активация PRO для ID: " + userId);
-    });
-</script>
+            <div class="plan-card popular">
+                <div class="popular-badge">Выгодно (Экономия 25%)</div>
+                <div class="plan-name">edDue PRO (Год)</div>
+                <div class="price">2199₽ <span>/год</span></div>
+                <ul class="features-list">
+                    <li><strong>Безлимитное</strong> количество учеников</li>
+                    <li>Полная статистика доходов и расходов</li>
+                    <li>Учет абонементов и посещаемости</li>
+                    <li>Поддержка нескольких валют</li>
+                    <li>Экспорт отчетов и резервное копирование</li>
+                    <li>Подписка на 1 год без автопродления</li>
+                </ul>
+                <a href="#" class="btn-buy btn-pro pay-btn" data-url="https://yookassa.ru/my/i/adzTzUXthIh2/l" data-type="Год">Активировать PRO</a>
+            </div>
         </main>
 
-       <section style="background: var(--card); padding: 24px; border-radius: 16px; border: 1px solid var(--border); font-size: 14px; color: var(--muted);">
-    <h3 style="color: var(--fg); margin-top: 0;">Частые вопросы</h3>
-    
-    <p><strong>Где скачать приложение?</strong><br>
-    Приложение доступно в <a href="https://apps.apple.com/in/app/eddue-calendar-for-tutors/id6469512576" rel="noopener" style="text-decoration: underline; color: var(--fg);">App Store по этой ссылке</a>.</p>
+        <section style="background: var(--card); padding: 24px; border-radius: 16px; border: 1px solid var(--border); font-size: 14px; color: var(--muted);">
+            <h3 style="color: var(--fg); margin-top: 0;">Частые вопросы</h3>
+            <p><strong>Где скачать приложение?</strong><br>
+            Приложение доступно в <a href="https://apps.apple.com/in/app/eddue-calendar-for-tutors/id6469512576" rel="noopener" style="text-decoration: underline; color: var(--fg);">App Store по этой ссылке</a>.</p>
+            <p><strong>Как работает подписка?</strong><br>После оплаты PRO-функции напишите нам на почту eddue.app@gmail.com, сообщите время оплаты и ID пользователя. Его можно найти в приложении на экране настройки внизу.</p>
+        </section>
 
-    <p><strong>Как работает подписка?</strong><br>После оплаты PRO-функции напишите нам на почту eddue.app@gmail.com, сообщите время оплаты и ID пользователя. Его можно найти в приложении на экране настройки внизу.</p>
-</section>
-
-      <footer>
+        <footer>
             <div style="margin-bottom: 20px; padding-top: 20px; border-top: 1px solid var(--border); line-height: 1.8;">
                 <p style="margin: 0; color: var(--fg); font-weight: 600;">Контактная информация:</p>
                 <p style="margin: 0;">ФИО: Астафьев Сергей Сергеевич</p>
                 <p style="margin: 0;">ИНН: 100121362424</p>
                 <p style="margin: 0;">Email: <a href="mailto:eddue.app@gmail.com" style="text-decoration: underline;">eddue.app@gmail.com</a></p>
             </div>
-
             <p>© <span id="y"></span> edDue. Все платежи защищены.</p>
             <p><a href="/rus/terms.html" style="text-decoration: underline;">Условия использования</a></p>
         </footer>
@@ -262,6 +233,25 @@
 
     <script>
         document.getElementById('y').textContent = new Date().getFullYear();
+
+        // Универсальный обработчик для кнопок
+        document.querySelectorAll('.pay-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const userId = document.getElementById('app-user-id').value.trim();
+                const planType = this.getAttribute('data-type');
+                const baseKassaUrl = this.getAttribute('data-url');
+                
+                if (!userId) {
+                    e.preventDefault();
+                    alert('Пожалуйста, сначала введите ваш ID из приложения в поле выше.');
+                    document.getElementById('app-user-id').focus();
+                    return;
+                }
+
+                localStorage.setItem('eddue_user_id', userId);
+                this.href = baseKassaUrl + "?comment=" + encodeURIComponent("Активация PRO (" + planType + ") для ID: " + userId);
+            });
+        });
     </script>
 </body>
 </html>
