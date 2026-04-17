@@ -5,20 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Подписка edDue — Тарифы для репетиторов</title>
     <meta name="description" content="Выберите подходящий тариф edDue и получите полный доступ к учету занятий, оплат и статистики." />
-
+ 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N696MVS16D"></script>
-
+ 
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="/eddueicon.png" />
-
+ 
     <meta name="theme-color" content="#0b1220" />
     <style>
-        /* Принудительный тёмный фон — перекрывает любой внешний контейнер */
         html, body {
             background: #0b1220 !important;
             color-scheme: dark;
         }
-
+ 
         :root {
             --bg:       #0b1220;
             --fg:       #dde8f4;
@@ -28,13 +27,12 @@
             --card:     #111d2e;
             --card-pop: #0f1e35;
             --border:   #1e3050;
-            --border-pop: #3a6090;
-            --accent:   #ffffff;
             --green:    #4ade80;
+            --amber:    #fbbf24;
         }
-
+ 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
         body {
             font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
             background: var(--bg);
@@ -42,9 +40,9 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-
+ 
         a { color: inherit; text-decoration: none; }
-
+ 
         .topbar {
             background: #1a2e4a;
             border-bottom: 1px solid #243d5a;
@@ -71,10 +69,10 @@
         .brand img { width: 30px; height: 30px; border-radius: 7px; }
         .back-link { font-size: 14px; color: rgba(255,255,255,.7); transition: color .15s; }
         .back-link:hover { color: #fff; }
-
+ 
         .wrap { max-width: 1040px; margin: 0 auto; padding: 52px 20px 72px; }
-
-        header { text-align: center; margin-bottom: 52px; }
+ 
+        header { text-align: center; margin-bottom: 36px; }
         h1 {
             font-size: clamp(26px, 5vw, 40px);
             font-weight: 800;
@@ -83,31 +81,58 @@
             letter-spacing: -.5px;
         }
         .subtitle { color: var(--muted); font-size: 17px; }
-
+ 
+        /* ── Блок-напоминание ── */
+        .email-notice {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: rgba(251, 191, 36, .08);
+            border: 1px solid rgba(251, 191, 36, .3);
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 40px;
+        }
+        .email-notice-icon {
+            font-size: 22px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .email-notice-text {
+            font-size: 14px;
+            color: var(--fg);
+            line-height: 1.6;
+        }
+        .email-notice-text b {
+            color: var(--amber);
+            font-weight: 600;
+        }
+ 
         .plans {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
             margin-bottom: 48px;
-            align-items: start;
+            align-items: stretch;
         }
-
+ 
         .plan-card {
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 32px;
+            padding-top: 36px;
             display: flex;
             flex-direction: column;
             position: relative;
         }
-
+ 
         .plan-card.popular {
             border: 2px solid var(--brand);
             background: var(--card-pop);
-            margin-top: 16px;
+            margin-top: 0;
         }
-
+ 
         .popular-badge {
             position: absolute;
             top: -14px;
@@ -122,14 +147,14 @@
             letter-spacing: .04em;
             white-space: nowrap;
         }
-
+ 
         .plan-name {
             font-size: 19px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 10px;
         }
-
+ 
         .price {
             font-size: 52px;
             font-weight: 800;
@@ -145,7 +170,7 @@
             color: var(--muted);
             font-weight: 400;
         }
-
+ 
         .features-list {
             list-style: none;
             margin: 0 0 32px;
@@ -170,7 +195,7 @@
             margin-top: 1px;
         }
         .features-list strong { color: #ffffff; }
-
+ 
         .btn-buy {
             display: block;
             text-align: center;
@@ -185,7 +210,7 @@
         }
         .btn-buy:hover { opacity: .92; transform: translateY(-2px); }
         .btn-buy:active { transform: translateY(0); }
-
+ 
         .faq {
             background: var(--card);
             border: 1px solid var(--border);
@@ -205,7 +230,7 @@
         .faq-a { font-size: 14px; color: var(--muted); line-height: 1.6; }
         .faq-a a { color: #7ab3e8; text-decoration: underline; }
         .faq-a a:hover { color: #fff; }
-
+ 
         footer {
             border-top: 1px solid var(--border);
             padding-top: 28px;
@@ -218,7 +243,7 @@
         footer a { color: var(--muted); text-decoration: underline; }
         footer a:hover { color: var(--fg); }
         .footer-copy { margin-top: 10px; color: #3a5570; }
-
+ 
         @media (max-width: 680px) {
             .wrap { padding: 32px 16px 52px; }
             .plan-card.popular { margin-top: 20px; }
@@ -228,7 +253,7 @@
     </style>
 </head>
 <body>
-
+ 
     <div class="topbar">
         <div class="topbar-inner">
             <a class="brand" href="/rus/">
@@ -238,16 +263,26 @@
             <a href="/rus/" class="back-link">← Вернуться</a>
         </div>
     </div>
-
+ 
     <div class="wrap">
-
+ 
         <header>
             <h1>Подписка edDue</h1>
             <p class="subtitle">Инструменты профессионального репетитора без ограничений</p>
         </header>
-
+ 
+        <!-- Напоминание про email -->
+        <div class="email-notice">
+            <div class="email-notice-icon">✉️</div>
+            <div class="email-notice-text">
+                <b>Важно:</b> при оплате укажите действующий email.
+                На него придёт код подтверждения для входа в приложение —
+                именно так активируется подписка.
+            </div>
+        </div>
+ 
         <main class="plans">
-
+ 
             <div class="plan-card">
                 <div class="plan-name">edDue PRO — Месяц</div>
                 <div class="price">249₽ <span class="price-period">/мес</span></div>
@@ -261,7 +296,7 @@
                 </ul>
                 <a href="https://yookassa.ru/my/i/ad6WpHjFJrFD/l" class="btn-buy">Активировать PRO</a>
             </div>
-
+ 
             <div class="plan-card popular">
                 <div class="popular-badge">Выгодно · Экономия 25%</div>
                 <div class="plan-name">edDue PRO — Год</div>
@@ -276,25 +311,22 @@
                 </ul>
                 <a href="https://yookassa.ru/my/i/adzTzUXthIh2/l" class="btn-buy">Активировать PRO</a>
             </div>
-
+ 
         </main>
-
+ 
         <section class="faq">
             <h3>Частые вопросы</h3>
             <div class="faq-item">
                 <div class="faq-q">Где скачать приложение?</div>
                 <div class="faq-a">Приложение доступно в <a href="https://apps.apple.com/in/app/eddue-calendar-for-tutors/id6469512576" rel="noopener">App Store по этой ссылке</a>.</div>
             </div>
-            <div class="faq-item">
-                <div class="faq-q">Как активируется подписка?</div>
-                <div class="faq-a">После оплаты отправьте на почту ID пользователя, его можно найти в приложении на экране настройки.</div>
-            </div>
+            
             <div class="faq-item">
                 <div class="faq-q">Есть вопросы?</div>
                 <div class="faq-a">Пишите на <a href="mailto:eddue.app@gmail.com">eddue.app@gmail.com</a> — ответим быстро.</div>
             </div>
         </section>
-
+ 
         <footer>
             <p class="footer-name">Астафьев Сергей Сергеевич</p>
             <p>ИНН: 100121362424</p>
@@ -302,9 +334,9 @@
             <p style="margin-top:10px"><a href="/rus/terms.html">Условия использования</a></p>
             <p class="footer-copy">© <span id="y"></span> edDue. Все платежи защищены.</p>
         </footer>
-
+ 
     </div>
-
+ 
     <script>
         document.getElementById('y').textContent = new Date().getFullYear();
         window.dataLayer = window.dataLayer || [];
@@ -312,6 +344,6 @@
         gtag('js', new Date());
         gtag('config', 'G-N696MVS16D');
     </script>
-
+ 
 </body>
 </html>
