@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Спасибо за покупку — edDue</title>
+    <meta name="theme-color" content="#0b1220" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/eddueicon.png" />
+
+    <style>
+        html, body {
+            background: #0b1220 !important;
+            color-scheme: dark;
+        }
+
+        :root {
+            --bg:      #0b1220;
+            --fg:      #dde8f4;
+            --muted:   #7a95b0;
+            --brand:   #4a7ab5;
+            --brand-dk:#3a6095;
+            --card:    #111d2e;
+            --border:  #1e3050;
+            --green:   #4ade80;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ── Шапка ── */
+        .topbar {
+            background: #1a2e4a;
+            border-bottom: 1px solid #243d5a;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .topbar-inner {
+            max-width: 680px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 17px;
+            color: #fff;
+        }
+        .brand img { width: 30px; height: 30px; border-radius: 7px; }
+
+        /* ── Обёртка ── */
+        .wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 48px 20px 72px;
+        }
+
+        /* ── Блок успеха ── */
+        .success-block {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .checkmark {
+            width: 72px;
+            height: 72px;
+            background: rgba(74, 222, 128, .12);
+            border: 2px solid var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 32px;
+        }
+
+        .success-block h1 {
+            font-size: clamp(22px, 5vw, 32px);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .success-block p {
+            color: var(--muted);
+            font-size: 16px;
+            max-width: 440px;
+            margin: 0 auto;
+        }
+
+        /* ── Карточка инструкции ── */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 24px;
+        }
+
+        /* ── Шаги ── */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .step-num {
+            width: 36px;
+            height: 36px;
+            background: var(--brand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .step-body {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .step-desc b {
+            color: var(--fg);
+            font-weight: 500;
+        }
+
+        /* Разделитель между шагами */
+        .step-divider {
+            width: 1px;
+            height: 16px;
+            background: var(--border);
+            margin-left: 17px;
+        }
+
+        /* ── Кнопка App Store ── */
+        .appstore-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 24px;
+            background: #fff;
+            color: #0b1220;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: opacity .2s, transform .2s;
+            text-decoration: none;
+            margin-top: 8px;
+        }
+        .appstore-btn:hover {
+            opacity: .92;
+            transform: translateY(-2px);
+        }
+        .appstore-btn svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        /* ── Подсказка ── */
+        .hint-card {
+            background: rgba(74, 122, 181, .08);
+            border: 1px solid rgba(74, 122, 181, .25);
+            border-radius: 14px;
+            padding: 18px 22px;
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        .hint-card b { color: var(--fg); font-weight: 500; }
+
+        /* ── Футер ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding-top: 28px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+        footer a {
+            color: #7ab3e8;
+            text-decoration: underline;
+        }
+        footer a:hover { color: #fff; }
+        .footer-copy { margin-top: 10px; color: #3a5570; }
+
+        @media (max-width: 480px) {
+            .card { padding: 24px 18px; }
+            .wrap { padding: 32px 16px 52px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="/rus/">
+                <img src="/eddueicon.png" alt="edDue" />
+                edDue
+            </a>
+        </div>
+    </div>
+
+    <div class="wrap">
+
+        <!-- Блок успеха -->
+        <div class="success-block">
+            <div class="checkmark">✓</div>
+            <h1>Спасибо за покупку!</h1>
+            <p>Оплата прошла успешно. Теперь активируйте подписку в приложении — это займёт меньше минуты.</p>
+        </div>
+
+        <!-- Инструкция -->
+        <div class="card">
+            <h2>Как активировать подписку</h2>
+            <div class="steps">
+
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <div class="step-title">Скачайте приложение</div>
+                        <div class="step-desc">Если ещё не установлено — скачайте edDue из App Store.</div>
+                    </div>
+                </div>
+
+                <div class="step-divider"></div>
+
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <div class="step-title">Откройте Настройки</div>
+                        <div class="step-desc">В нижнем меню приложения нажмите на вкладку <b>Настройки</b>.</div>
+                    </div>
+                </div>
+
+                <div class="step-divider"></div>
+
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <div class="step-title">Нажмите «Войти»</div>
+                        <div class="step-desc">В разделе <b>Аккаунт</b> нажмите кнопку <b>Войти</b>.</div>
+                    </div>
+                </div>
+
+                <div class="step-divider"></div>
+
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                        <div class="step-title">Введите email</div>
+                        <div class="step-desc">Укажите тот же email, который использовали при оплате. Нажмите <b>Получить код</b>.</div>
+                    </div>
+                </div>
+
+                <div class="step-divider"></div>
+
+                <div class="step">
+                    <div class="step-num">5</div>
+                    <div class="step-body">
+                        <div class="step-title">Введите код из письма</div>
+                        <div class="step-desc">Проверьте почту — придёт письмо с 6-значным кодом. Введите его в приложении.</div>
+                    </div>
+                </div>
+
+                <div class="step-divider"></div>
+
+                <div class="step">
+                    <div class="step-num">6</div>
+                    <div class="step-body">
+                        <div class="step-title">Готово!</div>
+                        <div class="step-desc">Подписка активируется автоматически сразу после входа.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Кнопка App Store -->
+        <a href="https://apps.apple.com/app/id6469512576" class="appstore-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            Скачать в App Store
+        </a>
+
+        <!-- Подсказка про письмо -->
+        <div class="hint-card" style="margin-top: 24px">
+            <b>Не пришёл код?</b> Проверьте папку «Спам». Код действует 10 минут —
+            если истёк, нажмите «Получить код» ещё раз.<br><br>
+            Если возникли вопросы — напишите нам:
+            <a href="mailto:eddue.app@gmail.com">eddue.app@gmail.com</a>
+        </div>
+
+        <footer>
+            <p><a href="/rus/subscribe.html">← Вернуться к тарифам</a></p>
+            <p class="footer-copy">© <span id="y"></span> edDue. Все платежи защищены.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
