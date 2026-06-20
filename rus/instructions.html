@@ -50,7 +50,8 @@
   .lang-menu a:hover{background:rgba(255,255,255,.06)}
   .lang[data-open="true"] .lang-menu{display:block}
   .wrap{max-width:1040px;margin:0 auto;padding:22px 16px}
-  .sect{margin:28px 0;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--card)}
+  .sect{margin:28px 0;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--card);scroll-margin-top:90px}
+  #top{scroll-margin-top:90px}
   h1{margin:18px 0 8px;font-size:clamp(30px,4vw,46px)}
   h2{margin:0 0 14px;font-size:clamp(24px,3vw,34px);letter-spacing:.2px}
   h3{margin:0 0 8px;font-size:21px}
@@ -107,19 +108,19 @@
         <h1>Инструкция пользователя</h1>
         <p class="lead">Здесь собраны пошаговые инструкции по работе с edDue. Выберите нужную тему и следуйте коротким шагам с изображениями.</p>
         <div class="toc">
-          <a href="#add-client"><strong>Как добавить клиента</strong><span>Создание карточки ученика, стоимость, валюта и комментарий.</span></a>
-          <a href="#add-lesson"><strong>Как добавить занятие</strong><span>Выбор клиента, настройка времени, повторов и сохранение занятия.</span></a>
-          <a href="#add-payment"><strong>Как добавить оплату</strong><span>Добавление оплаты через занятие, карточку клиента или вкладку оплат.</span></a>
-          <a href="#add-group"><strong>Как добавить группу</strong><span>Создание группы, выбор участников и сохранение.</span></a>
-          <a href="#group-lesson"><strong>Групповое занятие</strong><span>Создание занятия для группы и отметка отсутствующих участников.</span></a>
-          <a href="#quick-stats"><strong>Краткая статистика</strong><span>Просмотр сумм за текущий месяц, текущую неделю и фильтр по валюте.</span></a>
-          <a href="#schedule-scale"><strong>Масштаб расписания</strong><span>Изменение масштаба расписания через настройки или жестом двумя пальцами.</span></a>
-          <a href="#cell-settings"><strong>Настройка ячейки</strong><span>Настройка отображения ячейки, цвета текста и фоновых параметров.</span></a>
-          <a href="#add-subscription"><strong>Как добавить абонемент</strong><span>Создание абонемента, настройка дат, количества занятий и оплаты.</span></a>
-          <a href="#subscription-lesson"><strong>Занятие по абонементу</strong><span>Автоматическая привязка абонемента к занятию, ограничения и сохранение.</span></a>
-          <a href="#subscription-info"><strong>Информация по абонементу</strong><span>Просмотр занятий, оплат и переход к редактированию абонемента.</span></a>
-          <a href="#cancel-lesson"><strong>Клиент отменил занятие</strong><span>Отметка отмены занятия, штраф за отмену и отображение в расписании.</span></a>
-          <a href="#client-report"><strong>Отчет для клиента</strong><span>Отправка отчета о занятиях и платежах, чтобы напомнить клиенту об оплате.</span></a>
+          <a href="#add-client" data-scroll-target="add-client"><strong>Как добавить клиента</strong><span>Создание карточки ученика, стоимость, валюта и комментарий.</span></a>
+          <a href="#add-lesson" data-scroll-target="add-lesson"><strong>Как добавить занятие</strong><span>Выбор клиента, настройка времени, повторов и сохранение занятия.</span></a>
+          <a href="#add-payment" data-scroll-target="add-payment"><strong>Как добавить оплату</strong><span>Добавление оплаты через занятие, карточку клиента или вкладку оплат.</span></a>
+          <a href="#add-group" data-scroll-target="add-group"><strong>Как добавить группу</strong><span>Создание группы, выбор участников и сохранение.</span></a>
+          <a href="#group-lesson" data-scroll-target="group-lesson"><strong>Групповое занятие</strong><span>Создание занятия для группы и отметка отсутствующих участников.</span></a>
+          <a href="#quick-stats" data-scroll-target="quick-stats"><strong>Краткая статистика</strong><span>Просмотр сумм за текущий месяц, текущую неделю и фильтр по валюте.</span></a>
+          <a href="#schedule-scale" data-scroll-target="schedule-scale"><strong>Масштаб расписания</strong><span>Изменение масштаба расписания через настройки или жестом двумя пальцами.</span></a>
+          <a href="#cell-settings" data-scroll-target="cell-settings"><strong>Настройка ячейки</strong><span>Настройка отображения ячейки, цвета текста и фоновых параметров.</span></a>
+          <a href="#add-subscription" data-scroll-target="add-subscription"><strong>Как добавить абонемент</strong><span>Создание абонемента, настройка дат, количества занятий и оплаты.</span></a>
+          <a href="#subscription-lesson" data-scroll-target="subscription-lesson"><strong>Занятие по абонементу</strong><span>Автоматическая привязка абонемента к занятию, ограничения и сохранение.</span></a>
+          <a href="#subscription-info" data-scroll-target="subscription-info"><strong>Информация по абонементу</strong><span>Просмотр занятий, оплат и переход к редактированию абонемента.</span></a>
+          <a href="#cancel-lesson" data-scroll-target="cancel-lesson"><strong>Клиент отменил занятие</strong><span>Отметка отмены занятия, штраф за отмену и отображение в расписании.</span></a>
+          <a href="#client-report" data-scroll-target="client-report"><strong>Отчет для клиента</strong><span>Отправка отчета о занятиях и платежах, чтобы напомнить клиенту об оплате.</span></a>
         </div>
       </section>
 
@@ -345,13 +346,13 @@
 
       <section class="sect" id="add-group">
         <h2>Как добавить группу</h2>
-        <p class="muted">Инструкция по созданию новой группы и добавлению в неё клиентов.</p>
+        <p class="muted">Создайте группу и добавьте в неё нужных клиентов.</p>
         <div class="steps">
           <article class="step">
             <div>
               <div class="step-num">1</div>
               <h3>Откройте экран «Клиенты»</h3>
-              <p>Перейдите на экран «Клиенты», чтобы начать создание новой группы.</p>
+              <p>Откройте экран «Клиенты».</p>
             </div>
             <img src="../instructions/add-group-1.png" alt="Экран Клиенты для добавления группы" loading="lazy" />
           </article>
@@ -360,7 +361,7 @@
             <div>
               <div class="step-num">2</div>
               <h3>Нажмите «+»</h3>
-              <p>В открывшемся меню выберите пункт «Создать группу».</p>
+              <p>В открывшемся меню выберите «Создать группу».</p>
             </div>
             <img src="../instructions/add-group-2.png" alt="Выбор пункта Создать группу" loading="lazy" />
           </article>
@@ -369,7 +370,7 @@
             <div>
               <div class="step-num">3</div>
               <h3>Создайте группу</h3>
-              <p>Укажите название группы и цвет. Затем через поиск найдите клиентов, которых хотите добавить, отметьте их галочкой и нажмите на галочку для сохранения.</p>
+              <p>Добавьте название группы и цвет. В поле поиска найдите клиента, которого хотите добавить, и поставьте галочку. Для сохранения нажмите на галочку.</p>
             </div>
             <img src="../instructions/add-group-3.png" alt="Заполнение данных группы и выбор клиентов" loading="lazy" />
           </article>
@@ -378,7 +379,7 @@
             <div>
               <div class="step-num">4</div>
               <h3>Готово</h3>
-              <p>Группа появится во вкладке «Группы». Теперь можно создавать групповое занятие.</p>
+              <p>Группа добавлена, можно создавать групповое занятие.</p>
             </div>
             <img src="../instructions/add-group-4.png" alt="Группа добавлена в список" loading="lazy" />
           </article>
@@ -896,6 +897,17 @@
   btn.addEventListener('click', (e)=>{ e.stopPropagation(); const open = lang.getAttribute('data-open')==='true'; lang.setAttribute('data-open', String(!open)); btn.setAttribute('aria-expanded', String(!open)); });
   document.addEventListener('click', ()=>{ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); });
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); }});
+
+  document.querySelectorAll('a[href^="#"]').forEach((link)=>{
+    link.addEventListener('click', (event)=>{
+      const id = link.getAttribute('href').slice(1);
+      const target = id === 'top' ? document.body : document.getElementById(id);
+      if(!target) return;
+      event.preventDefault();
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+      history.pushState(null, '', '#' + id);
+    });
+  });
 </script>
 <script src="/cookie-notice.js"></script>
 </body>
