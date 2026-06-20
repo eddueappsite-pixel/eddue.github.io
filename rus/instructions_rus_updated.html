@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Инструкция пользователя — edDue</title>
+<meta name="description" content="Инструкции по работе с edDue: как добавить клиента, создать занятия, вести оплаты и абонементы." />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109109381', 'ym');
+
+    ym(109109381, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109109381" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="/eddueicon.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Инструкция пользователя — edDue" />
+<meta property="og:description" content="Пошаговые инструкции по работе с приложением edDue." />
+
+<style>
+  :root{--bg:#0b1220;--fg:#e6eef7;--muted:#9db0c7;--brand:#386090;--card:rgba(255,255,255,.03);--border:rgba(255,255,255,.09);--accent:#ffca28;--accent-fg:#0b1220}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:var(--bg);color:var(--fg)}
+  a{color:inherit;text-decoration:none}
+  .topbar{background:linear-gradient(0deg, rgba(255,255,255,.06), rgba(255,255,255,.06)), var(--brand);color:#ffffff;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(0,0,0,.15);box-shadow:0 2px 0 rgba(0,0,0,.08)}
+  .topbar-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+  .brand img{width:28px;height:28px;border-radius:6px;display:block}
+  .menu{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .menu a{padding:8px 10px;border-radius:8px;font-weight:600;opacity:.98}
+  .menu a:hover,.menu a[aria-current="page"]{background:rgba(255,255,255,.18)}
+  .lang{position:relative}
+  .lang-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:0;background:transparent;color:inherit;font-weight:700;cursor:pointer}
+  .lang-btn:hover{background:rgba(255,255,255,.18)}
+  .globe{width:18px;height:18px;color:inherit}
+  .lang-menu{position:absolute;right:0;top:calc(100% + 8px);background:#0b1220;color:var(--fg);border:1px solid var(--border);border-radius:10px;min-width:160px;padding:6px;display:none}
+  .lang-menu a{display:block;padding:8px 10px;border-radius:8px}
+  .lang-menu a:hover{background:rgba(255,255,255,.06)}
+  .lang[data-open="true"] .lang-menu{display:block}
+  .wrap{max-width:1040px;margin:0 auto;padding:22px 16px}
+  .sect{margin:28px 0;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--card)}
+  h1{margin:18px 0 8px;font-size:clamp(30px,4vw,46px)}
+  h2{margin:0 0 14px;font-size:clamp(24px,3vw,34px);letter-spacing:.2px}
+  h3{margin:0 0 8px;font-size:21px}
+  p{margin:10px 0;color:#dbe7f3;line-height:1.55}
+  .lead{font-size:18px;max-width:760px;color:#dbe7f3}
+  .toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+  .toc a{display:block;padding:16px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.04)}
+  .toc a:hover{background:rgba(255,255,255,.08)}
+  .toc strong{display:block;margin-bottom:4px;color:#fff}
+  .toc span{color:var(--muted);font-size:14px}
+  .steps{display:grid;gap:18px;margin-top:18px}
+  .step{display:grid;grid-template-columns:1fr 1.05fr;gap:18px;align-items:center;padding:16px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.025)}
+  .step img{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);background:#eef3fb;display:block}
+  .step-num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-fg);font-weight:900;margin-bottom:10px}
+  .muted{color:var(--muted)}
+  .back{display:inline-flex;margin-top:16px;color:var(--muted);text-decoration:underline}
+  footer{margin:32px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  footer a{text-decoration:underline}
+  @media (max-width:820px){.step{grid-template-columns:1fr}.toc{grid-template-columns:1fr}.topbar-inner{align-items:flex-start}.menu{gap:8px}.menu a{padding:8px 7px}}
+</style>
+</head>
+<body>
+  <div class="topbar" role="navigation" aria-label="Основное меню">
+    <div class="topbar-inner">
+      <a class="brand" href="/rus/">
+        <img src="/eddueicon.png" alt="Иконка приложения edDue" />
+        <span>edDue</span>
+      </a>
+      <nav class="menu">
+        <a href="https://apps.apple.com/in/app/eddue-calendar-for-tutors/id6469512576" rel="noopener">Скачать</a>
+        <a href="/rus/instructions.html" aria-current="page">Инструкция пользователя</a>
+        <a href="https://t.me/eddueapp" rel="noopener">Новости</a>
+        <a href="mailto:eddue.app@gmail.com">Контакты</a>
+        <div class="lang" id="lang">
+          <button class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Язык">
+            <svg class="globe" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+              <path d="M2 12h20M12 2c3.5 3.5 3.5 16.5 0 20M12 2c-3.5 3.5-3.5 16.5 0 20" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span>РУ</span>
+          </button>
+          <div class="lang-menu" role="menu" aria-label="Выберите язык">
+            <a href="/instructions.html" role="menuitem">English</a>
+            <a href="/rus/instructions.html" role="menuitem" aria-current="page">Русский</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <main>
+      <section class="sect">
+        <h1>Инструкция пользователя</h1>
+        <p class="lead">Здесь собраны пошаговые инструкции по работе с edDue. Выберите нужную тему и следуйте коротким шагам с изображениями.</p>
+        <div class="toc">
+          <a href="#add-client"><strong>Как добавить клиента</strong><span>Создание карточки ученика, стоимость, валюта и комментарий.</span></a>
+          <a href="#add-lesson"><strong>Как добавить занятие</strong><span>Выбор клиента, настройка времени, повторов и сохранение занятия.</span></a>
+          <a href="#coming-soon"><strong>Другие инструкции</strong><span>Здесь можно добавить новые разделы: оплаты, абонементы, группы.</span></a>
+        </div>
+      </section>
+
+      <section class="sect" id="add-client">
+        <h2>Как добавить клиента</h2>
+        <p class="muted">Пример пошаговой инструкции для нового пользователя.</p>
+        <div class="steps">
+          <article class="step">
+            <div>
+              <div class="step-num">1</div>
+              <h3>Откройте раздел «Клиенты»</h3>
+              <p>Перейдите во вкладку «Клиенты», чтобы начать добавление нового ученика.</p>
+            </div>
+            <img src="/instructions/add-client-1.png" alt="Откройте раздел Клиенты в edDue" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">2</div>
+              <h3>Нажмите «+»</h3>
+              <p>В открывшемся меню выберите пункт «Создать клиента».</p>
+            </div>
+            <img src="/instructions/add-client-2.png" alt="Нажмите плюс и выберите Создать клиента" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">3</div>
+              <h3>Заполните карточку</h3>
+              <p>Укажите имя, стоимость занятия, валюту и при необходимости добавьте комментарий. Если указать день рождения, в этот день придёт уведомление.</p>
+            </div>
+            <img src="/instructions/add-client-3.png" alt="Заполните карточку клиента" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">4</div>
+              <h3>Готово</h3>
+              <p>Новый клиент появится в списке. Теперь можно создавать занятия и добавлять оплаты.</p>
+            </div>
+            <img src="/instructions/add-client-4.png" alt="Клиент добавлен в список" loading="lazy" />
+          </article>
+        </div>
+        <a class="back" href="#top">Наверх</a>
+      </section>
+
+      <section class="sect" id="add-lesson">
+        <h2>Как добавить занятие</h2>
+        <p class="muted">Пошаговая инструкция по созданию занятия для клиента в расписании.</p>
+        <div class="steps">
+          <article class="step">
+            <div>
+              <div class="step-num">1</div>
+              <h3>Начните добавление занятия</h3>
+              <p>Нажмите «+» в расписании или выберите нужную ячейку в календаре.</p>
+            </div>
+            <img src="/instructions/add-lesson-1.png" alt="Как добавить занятие в edDue" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">2</div>
+              <h3>Выберите клиента</h3>
+              <p>Начните вводить имя клиента. Система покажет список совпадающих имён.</p>
+            </div>
+            <img src="/instructions/add-lesson-2.png" alt="Выбор клиента при создании занятия" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">3</div>
+              <h3>Заполните карточку занятия</h3>
+              <p>После выбора клиента автоматически подставится стоимость из его карточки. Затем можно изменить время, дату и добавить комментарий.</p>
+            </div>
+            <img src="/instructions/add-lesson-3.png" alt="Заполнение карточки занятия" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">4</div>
+              <h3>Настройте продолжительность</h3>
+              <p>Для быстрой установки продолжительности занятия можно воспользоваться блоком с готовыми вариантами времени.</p>
+            </div>
+            <img src="/instructions/add-lesson-4.png" alt="Быстрая настройка продолжительности занятия" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">5</div>
+              <h3>Установите повторы</h3>
+              <p>Задайте последнюю дату повтора и выберите дни недели. Если занятие не нужно в определённый день, его можно удалить из списка, нажав на крестик.</p>
+            </div>
+            <img src="/instructions/add-lesson-5.png" alt="Настройка повторяющихся занятий" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">6</div>
+              <h3>Сохраните занятие</h3>
+              <p>Проверьте все данные и сохраните занятие, нажав на галочку.</p>
+            </div>
+            <img src="/instructions/add-lesson-6.png" alt="Сохранение занятия" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">7</div>
+              <h3>Готово</h3>
+              <p>Занятие появится в расписании.</p>
+            </div>
+            <img src="/instructions/add-lesson-7.png" alt="Занятие отображается в расписании" loading="lazy" />
+          </article>
+        </div>
+        <a class="back" href="#top">Наверх</a>
+      </section>
+
+      <section class="sect" id="coming-soon">
+        <h2>Другие инструкции</h2>
+        <p>В этот раздел можно постепенно добавить новые страницы или блоки: «Как добавить оплату», «Как создать абонемент», «Как создать группу».</p>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> edDue</div>
+      <div><a href="/rus/terms.html">Условия и конфиденциальность</a></div>
+    </footer>
+  </div>
+
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+  const lang = document.getElementById('lang'); const btn = lang.querySelector('.lang-btn');
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); const open = lang.getAttribute('data-open')==='true'; lang.setAttribute('data-open', String(!open)); btn.setAttribute('aria-expanded', String(!open)); });
+  document.addEventListener('click', ()=>{ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ lang.setAttribute('data-open','false'); btn.setAttribute('aria-expanded','false'); }});
+</script>
+<script src="/cookie-notice.js"></script>
+</body>
+</html>
