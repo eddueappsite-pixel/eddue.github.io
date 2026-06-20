@@ -114,6 +114,11 @@
           <a href="#quick-stats"><strong>Краткая статистика</strong><span>Просмотр сумм за текущий месяц, текущую неделю и фильтр по валюте.</span></a>
           <a href="#schedule-scale"><strong>Масштаб расписания</strong><span>Изменение масштаба расписания через настройки или жестом двумя пальцами.</span></a>
           <a href="#cell-settings"><strong>Настройка ячейки</strong><span>Настройка отображения ячейки, цвета текста и фоновых параметров.</span></a>
+          <a href="#add-subscription"><strong>Как добавить абонемент</strong><span>Создание абонемента, настройка дат, количества занятий и оплаты.</span></a>
+          <a href="#subscription-lesson"><strong>Занятие по абонементу</strong><span>Автоматическая привязка абонемента к занятию, ограничения и сохранение.</span></a>
+          <a href="#subscription-info"><strong>Информация по абонементу</strong><span>Просмотр занятий, оплат и переход к редактированию абонемента.</span></a>
+          <a href="#cancel-lesson"><strong>Клиент отменил занятие</strong><span>Отметка отмены занятия, штраф за отмену и отображение в расписании.</span></a>
+          <a href="#client-report"><strong>Отчет для клиента</strong><span>Отправка отчета о занятиях и платежах, чтобы напомнить клиенту об оплате.</span></a>
         </div>
       </section>
 
@@ -509,6 +514,329 @@
         <a class="back" href="#top">Наверх</a>
       </section>
 
+      <section class="sect" id="add-subscription">
+        <h2>Как добавить абонемент</h2>
+        <p class="muted">Абонемент помогает учитывать срок действия, количество занятий и оплату клиента.</p>
+        <div class="steps">
+          <article class="step">
+            <div>
+              <div class="step-num">1</div>
+              <h3>Откройте карточку клиента</h3>
+              <p>На экране «Клиенты» нажмите на карточку нужного клиента.</p>
+            </div>
+            <img src="../instructions/add-subscription-1.png" alt="Открытие карточки клиента для добавления абонемента" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">2</div>
+              <h3>Откройте вкладку «Абонемент»</h3>
+              <p>В карточке клиента перейдите во вкладку «Абонемент».</p>
+            </div>
+            <img src="../instructions/add-subscription-2.png" alt="Вкладка Абонемент в карточке клиента" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">3</div>
+              <h3>Нажмите «Добавить абонемент»</h3>
+              <p>Если абонементы ещё не добавлены, нажмите кнопку «Добавить абонемент».</p>
+            </div>
+            <img src="../instructions/add-subscription-3.png" alt="Кнопка Добавить абонемент" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">4</div>
+              <h3>Заполните данные абонемента</h3>
+              <p>Установите дату начала и окончания абонемента, стоимость, количество занятий и комментарий. Чтобы сразу внести оплату, нажмите «Добавить оплату».</p>
+            </div>
+            <img src="../instructions/add-subscription-4.png" alt="Заполнение данных абонемента" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">5</div>
+              <h3>Добавьте оплату</h3>
+              <p>Введите сумму и дату оплаты. Оплата привяжется к абонементу. Для сохранения нажмите на галочку.</p>
+            </div>
+            <img src="../instructions/add-subscription-5.png" alt="Добавление оплаты к абонементу" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">6</div>
+              <h3>Готово</h3>
+              <p>Абонемент появится в карточке клиента. Теперь можно создавать занятия по абонементу.</p>
+            </div>
+            <img src="../instructions/add-subscription-6.png" alt="Абонемент добавлен в карточку клиента" loading="lazy" />
+          </article>
+        </div>
+        <a class="back" href="#top">Наверх</a>
+      </section>
+
+
+      <section class="sect" id="subscription-lesson">
+        <h2>Занятие по абонементу</h2>
+        <p class="muted">Как создать занятие, которое автоматически привязывается к активному абонементу клиента.</p>
+        <div class="steps">
+          <article class="step">
+            <div>
+              <div class="step-num">1</div>
+              <h3>Начните создание занятия</h3>
+              <p>Нажмите «+» или выберите нужную ячейку в расписании.</p>
+            </div>
+            <img src="../instructions/subscription-lesson-1.png" alt="Начало создания занятия по абонементу" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">2</div>
+              <h3>Абонемент привяжется автоматически</h3>
+              <p>Если у клиента есть активный абонемент, он автоматически привяжется к занятию.</p>
+            </div>
+            <img src="../instructions/subscription-lesson-2.png" alt="Активный абонемент автоматически привязывается к занятию" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">3</div>
+              <h3>Что считается активным абонементом</h3>
+              <p>Активным считается абонемент, у которого есть свободные занятия, а дата занятия находится в пределах срока действия абонемента.</p>
+            </div>
+            <img src="../instructions/subscription-lesson-3.png" alt="Условия активного абонемента для занятия" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">4</div>
+              <h3>Редактирование абонемента</h3>
+              <p>При нажатии на «Редактировать» можно внести изменения в абонемент или добавить оплату по нему.</p>
+            </div>
+            <img src="../instructions/subscription-lesson-4.png" alt="Редактирование абонемента из карточки занятия" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">5</div>
+              <h3>Удаление связи с абонементом</h3>
+              <p>При нажатии на «Удалить» абонемент отвяжется от занятия, и можно будет создать обычное занятие без абонемента.</p>
+            </div>
+            <img src="../instructions/subscription-lesson-5.png" alt="Удаление привязки абонемента к занятию" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">6</div>
+              <h3>Повторяющиеся занятия</h3>
+              <p>Если создавать повторяющиеся события, их количество ограничивается количеством свободных занятий и сроком действия абонемента.</p>
+            </div>
+            <img src="../instructions/subscription-lesson-6.png" alt="Ограничения повторяющихся занятий по абонементу" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">7</div>
+              <h3>Сохраните занятие</h3>
+              <p>Для сохранения занятия нажмите на галочку.</p>
+            </div>
+            <img src="../instructions/subscription-lesson-7.png" alt="Сохранение занятия по абонементу" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">8</div>
+              <h3>Готово</h3>
+              <p>В ячейке занятия будет отображаться порядковый номер занятия в абонементе.</p>
+            </div>
+            <img src="../instructions/subscription-lesson-8.png" alt="Занятие по абонементу сохранено в расписании" loading="lazy" />
+          </article>
+        </div>
+        <a class="back" href="#top">Наверх</a>
+      </section>
+
+      <section class="sect" id="subscription-info">
+        <h2>Информация по абонементу</h2>
+        <p class="muted">В карточке абонемента можно посмотреть прогресс занятий, суммы и оплаты, а также перейти к редактированию.</p>
+        <div class="steps">
+          <article class="step">
+            <div>
+              <div class="step-num">1</div>
+              <h3>Откройте карточку клиента</h3>
+              <p>На экране «Клиенты» нажмите на карточку нужного клиента.</p>
+            </div>
+            <img src="../instructions/subscription-info-1.png" alt="Открытие карточки клиента для просмотра абонемента" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">2</div>
+              <h3>Перейдите во вкладку «Абонемент»</h3>
+              <p>В карточке клиента откройте вкладку «Абонемент».</p>
+            </div>
+            <img src="../instructions/subscription-info-2.png" alt="Переход во вкладку Абонемент" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">3</div>
+              <h3>Откройте карточку абонемента</h3>
+              <p>Нажмите на карточку абонемента, чтобы раскрыть подробную информацию.</p>
+            </div>
+            <img src="../instructions/subscription-info-3.png" alt="Открытие карточки абонемента" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">4</div>
+              <h3>Посмотрите детали</h3>
+              <p>Здесь можно посмотреть, сколько занятий уже прошло, сколько запланировано, а также информацию об оплате.</p>
+            </div>
+            <img src="../instructions/subscription-info-4.png" alt="Подробная информация по абонементу" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">5</div>
+              <h3>Перейдите к редактированию</h3>
+              <p>Чтобы изменить абонемент, нажмите на иконку карандаша.</p>
+            </div>
+            <img src="../instructions/subscription-info-5.png" alt="Иконка карандаша для редактирования абонемента" loading="lazy" />
+          </article>
+        </div>
+        <a class="back" href="#top">Наверх</a>
+      </section>
+      <section class="sect" id="cancel-lesson">
+        <h2>Клиент отменил занятие</h2>
+        <p class="muted">Если клиент отменил занятие, его можно отметить в карточке занятия. При необходимости можно указать штраф за отмену.</p>
+        <div class="steps">
+          <article class="step">
+            <div>
+              <div class="step-num">1</div>
+              <h3>Откройте занятие</h3>
+              <p>В расписании нажмите на ячейку с нужным занятием.</p>
+            </div>
+            <img src="../instructions/cancel-lesson-1.png" alt="Открытие занятия в расписании для отметки отмены" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">2</div>
+              <h3>Поставьте отметку отмены</h3>
+              <p>В карточке занятия включите переключатель «Клиент отменил занятие».</p>
+            </div>
+            <img src="../instructions/cancel-lesson-2.png" alt="Переключатель Клиент отменил занятие" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">3</div>
+              <h3>Выберите, нужен ли штраф</h3>
+              <p>Если вы не берёте штраф за отмену занятия, выберите «Нет». Если хотите назначить штраф, введите сумму штрафа.</p>
+            </div>
+            <img src="../instructions/cancel-lesson-3.png" alt="Выбор штрафа за отмену занятия" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">4</div>
+              <h3>Сохраните изменения</h3>
+              <p>Для сохранения изменений нажмите на галочку.</p>
+            </div>
+            <img src="../instructions/cancel-lesson-4.png" alt="Сохранение отметки об отмене занятия" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">5</div>
+              <h3>Готово</h3>
+              <p>В расписании отменённое занятие будет отмечено крестиком.</p>
+            </div>
+            <img src="../instructions/cancel-lesson-5.png" alt="Отменённое занятие отмечено крестиком в расписании" loading="lazy" />
+          </article>
+        </div>
+        <a class="back" href="#top">Наверх</a>
+      </section>
+
+
+      <section class="sect" id="client-report">
+        <h2>Отчет для клиента</h2>
+        <p class="muted">Если есть неоплаченные занятия, можно отправить клиенту отчет и напомнить об оплате.</p>
+        <div class="steps">
+          <article class="step">
+            <div>
+              <div class="step-num">1</div>
+              <h3>Откройте статистику</h3>
+              <p>Перейдите на экран «Статистика», чтобы посмотреть занятия и оплаты за выбранный период.</p>
+            </div>
+            <img src="../instructions/client-report-1.png" alt="Экран статистики с неоплаченными занятиями" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">2</div>
+              <h3>Подготовьте отчет</h3>
+              <p>Откройте экран «Статистика» и проверьте список занятий и оплат.</p>
+            </div>
+            <img src="../instructions/client-report-2.png" alt="Открыт экран статистики для подготовки отчета" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">3</div>
+              <h3>Выберите клиента и период</h3>
+              <p>Выберите нужного клиента и установите период для отчета. Затем нажмите «Отправить отчет».</p>
+            </div>
+            <img src="../instructions/client-report-3.png" alt="Выбор клиента и периода для отчета" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">4</div>
+              <h3>Выберите вид отчета</h3>
+              <p>Выберите подходящий вид отчета. В первый отчет входят занятия и оплаты, во второй — только занятия.</p>
+            </div>
+            <img src="../instructions/client-report-4.png" alt="Выбор вида отчета для клиента" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">5</div>
+              <h3>Отправьте отчет</h3>
+              <p>Выберите удобный мессенджер, почту или другой способ отправки отчета.</p>
+            </div>
+            <img src="../instructions/client-report-5.png" alt="Отправка отчета через мессенджер или почту" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">6</div>
+              <h3>Отчет «Занятия и платежи»</h3>
+              <p>В этом отчете видны все занятия и платежи клиента за выбранный период, его баланс и неоплаченные занятия.</p>
+            </div>
+            <img src="../instructions/client-report-6.png" alt="Отчет с занятиями и платежами клиента" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">7</div>
+              <h3>Отчет «Только занятия»</h3>
+              <p>В этом отчете отображаются только занятия клиента.</p>
+            </div>
+            <img src="../instructions/client-report-7.png" alt="Отчет только с занятиями клиента" loading="lazy" />
+          </article>
+
+          <article class="step">
+            <div>
+              <div class="step-num">8</div>
+              <h3>Напомните об оплате</h3>
+              <p>Используйте отчет, чтобы отправить клиенту список занятий и напомнить об оплате.</p>
+            </div>
+            <img src="../instructions/client-report-8.png" alt="Отчет можно использовать для напоминания клиенту об оплате" loading="lazy" />
+          </article>
+        </div>
+        <a class="back" href="#top">Наверх</a>
+      </section>
     </main>
 
     <footer>
